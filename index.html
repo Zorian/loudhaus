@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loud Haus — Strategic Brand Partnerships for Fashion, Culture &amp; Entertainment</title>
+<meta name="description" content="Loud Haus is a boutique brand partnerships consultancy connecting brands with fashion, cultural and entertainment experiences through meaningful commercial partnerships.">
+<meta property="og:title" content="Loud Haus — Strategic Brand Partnerships">
+<meta property="og:description" content="Boutique brand partnerships consultancy for fashion, culture and entertainment.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#4A0D19">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234A0D19'/%3E%3Ccircle cx='50' cy='58' r='20' fill='%23EDE8E2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ox:#4A0D19;
+  --ox-deep:#310810;
+  --ox-lift:#6E1A28;
+  --cream:#EDE8E2;
+  --cream-2:#E3DCD4;
+  --rule-on-ox:rgba(237,232,226,.20);
+  --rule-on-cream:rgba(74,13,25,.22);
+  --gut:clamp(20px,5vw,72px);
+  --display:"Poppins",system-ui,sans-serif;
+  --body:"Fraunces",Georgia,serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ox);color:var(--cream);
+  font-family:var(--body);font-weight:300;
+  font-size:clamp(16px,1.05vw,18px);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--cream);color:var(--ox)}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+
+/* ---------- type system ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;opacity:.6;display:block;
+}
+.stack{
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  line-height:.86;letter-spacing:-.035em;
+  font-size:clamp(2.6rem,8.4vw,7.4rem);
+}
+.stack .dot{color:inherit}
+.lede{
+  font-family:var(--body);font-weight:300;
+  font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:1.45;
+}
+.small{font-size:.92rem;opacity:.78;line-height:1.65}
+
+/* ---------- shell ---------- */
+section{padding:clamp(72px,10vw,150px) var(--gut);position:relative}
+.light{background:var(--cream);color:var(--ox)}
+.light .eyebrow{opacity:.55}
+.wrap{max-width:1360px;margin:0 auto}
+
+/* ---------- nav ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--gut);
+  background:rgba(74,13,25,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--rule-on-ox);
+  transition:background .4s ease,color .4s ease,border-color .4s ease;
+}
+header.on-light{
+  background:rgba(237,232,226,.9);color:var(--ox);
+  border-bottom-color:var(--rule-on-cream);
+}
+.mark{
+  font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;
+  line-height:.9;display:block;
+}
+nav{display:flex;gap:clamp(14px,2vw,32px)}
+nav a{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;text-decoration:none;opacity:.7;
+  transition:opacity .25s;
+}
+nav a:hover{opacity:1}
+@media(max-width:640px){nav a:nth-child(-n+2){display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:120px;padding-bottom:clamp(28px,4vw,52px);
+}
+.hero h1{font-size:clamp(3.1rem,12.2vw,11rem)}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(103%)}
+.loaded .hero h1 span i{
+  transform:translateY(0);
+  transition:transform 1.05s cubic-bezier(.16,1,.3,1);
+}
+.loaded .hero h1 span:nth-child(2) i{transition-delay:.09s}
+.loaded .hero h1 span:nth-child(3) i{transition-delay:.18s}
+.hero-foot{
+  display:grid;grid-template-columns:1fr;gap:28px;
+  margin-top:clamp(32px,5vw,64px);
+  border-top:1px solid var(--rule-on-ox);padding-top:26px;
+}
+@media(min-width:900px){.hero-foot{grid-template-columns:1.15fr 1fr;gap:64px;align-items:start}}
+.hero-foot p+p{margin-top:14px}
+.ticker{
+  display:flex;flex-wrap:wrap;gap:8px 0;align-items:baseline;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;opacity:.72;
+}
+.ticker span:not(:last-child)::after{content:" · ";opacity:.5;padding:0 .5em}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;gap:clamp(28px,4vw,72px)}
+@media(min-width:900px){.about-grid{grid-template-columns:.85fr 1.15fr}}
+.about-grid h2{margin-bottom:.4em}
+.about-body p+p{margin-top:1.15em}
+.about-body p:first-child{font-size:clamp(1.1rem,1.7vw,1.4rem);line-height:1.5}
+
+/* ---------- services ---------- */
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:clamp(34px,5vw,64px)}
+.svc{
+  display:grid;gap:1px;background:var(--rule-on-cream);
+  border:1px solid var(--rule-on-cream);
+}
+@media(min-width:700px){.svc{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc article{
+  background:var(--cream);padding:clamp(24px,2.6vw,38px);
+  min-height:clamp(210px,20vw,280px);
+  display:flex;flex-direction:column;justify-content:space-between;gap:20px;
+  transition:background .35s ease,color .35s ease;
+}
+.svc article:hover,.svc article:focus-within{background:var(--ox);color:var(--cream)}
+.svc h3{
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:.98;letter-spacing:-.025em;
+}
+.svc p{font-size:.95rem;line-height:1.55;opacity:.85}
+.svc .num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;opacity:.5}
+
+/* ---------- projects ---------- */
+.proj{border-top:1px solid var(--rule-on-ox)}
+.proj details{border-bottom:1px solid var(--rule-on-ox)}
+.proj summary{
+  list-style:none;cursor:pointer;padding:clamp(20px,2.6vw,34px) 0;
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.4rem,4.4vw,3.4rem);line-height:.95;letter-spacing:-.03em;
+  transition:padding-left .4s cubic-bezier(.16,1,.3,1),opacity .3s;
+}
+.proj summary::-webkit-details-marker{display:none}
+.proj summary:hover{padding-left:clamp(10px,1.6vw,26px)}
+.proj summary .tag{
+  font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.18em;
+  opacity:.55;white-space:nowrap;flex-shrink:0;
+}
+.proj details[open] summary{opacity:.55}
+.proj .body{padding:0 0 clamp(24px,3vw,40px);max-width:60ch}
+@media(max-width:640px){.proj summary .tag{display:none}}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;gap:clamp(32px,4vw,72px);margin-top:clamp(30px,4vw,56px)}
+@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
+.field{display:block;margin-bottom:20px}
+.field span{
+  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;display:block;margin-bottom:8px;opacity:.6;
+}
+.field input,.field textarea{
+  width:100%;background:transparent;border:0;
+  border-bottom:1px solid var(--rule-on-cream);
+  padding:10px 0;font-family:var(--body);font-size:1.05rem;
+  color:var(--ox);transition:border-color .3s;
+}
+.field textarea{resize:vertical;min-height:110px}
+.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ox)}
+button{
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:.95rem;letter-spacing:.02em;
+  background:var(--ox);color:var(--cream);border:1px solid var(--ox);
+  padding:16px 34px;cursor:pointer;
+  transition:background .3s,color .3s;
+}
+button:hover{background:transparent;color:var(--ox)}
+.contact-direct a{
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.1rem,2.4vw,2rem);letter-spacing:-.02em;
+  text-decoration:none;display:inline-block;
+  border-bottom:2px solid currentColor;line-height:1.1;
+}
+.contact-direct a:hover{opacity:.6}
+.contact-direct div+div{margin-top:32px}
+
+/* ---------- footer ---------- */
+footer{padding:clamp(48px,6vw,88px) var(--gut) 34px;border-top:1px solid var(--rule-on-ox)}
+.footer-mark{
+  font-family:var(--display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(3.4rem,17vw,15rem);line-height:.82;letter-spacing:-.045em;
+}
+.footer-meta{
+  display:flex;flex-wrap:wrap;gap:14px 32px;justify-content:space-between;
+  margin-top:clamp(28px,4vw,54px);padding-top:22px;
+  border-top:1px solid var(--rule-on-ox);
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;
+}
+.footer-meta a{text-decoration:none}
+.footer-meta a:hover{opacity:1;text-decoration:underline}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv,.hero h1 span i{opacity:1!important;transform:none!important;transition:none!important}
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="mark" href="#top">Loud<br>Haus.</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow" style="margin-bottom:clamp(20px,3vw,40px)">Brand Partnerships Consultancy — London</span>
+    <h1 class="stack">
+      <span><i>Strategic</i></span>
+      <span><i>Brand</i></span>
+      <span><i>Partnerships<span class="dot">.</span></i></span>
+    </h1>
+    <div class="hero-foot">
+      <div>
+        <p class="lede">A boutique consultancy connecting brands with fashion, cultural and entertainment experiences through meaningful commercial partnerships.</p>
+      </div>
+      <div>
+        <p class="small">From sponsorship strategy and brand outreach to partnership negotiations and commercial consultancy, we help clients secure partnerships that create lasting value and meaningful brand engagement.</p>
+        <p class="small" style="margin-top:14px">Whether you're producing a fashion showcase, cultural event or awards ceremony, we develop tailored partnership strategies that connect your vision with the right brands.</p>
+      </div>
+    </div>
+    <div class="ticker" style="margin-top:26px">
+      <span>Sponsorship Strategy</span><span>Brand Partnerships</span><span>Commercial Partnerships</span><span>Brand Outreach</span><span>Partnership Negotiation</span><span>Gifting Partnerships</span><span>Commercial Consultancy</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="light" id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <span class="eyebrow" style="margin-bottom:22px">About</span>
+      <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">Partnerships<br>that matter<span class="dot">.</span></h2>
+    </div>
+    <div class="about-body rv">
+      <p>We are a boutique brand partnerships consultancy specialising in connecting brands with fashion, cultural and entertainment experiences that create meaningful commercial value.</p>
+      <p>Our approach is built on strategy, alignment and authentic relationship building. We work closely with event organisers, creatives and businesses to develop tailored partnership strategies that attract the right commercial partners — not simply the biggest names.</p>
+      <p>From sponsorship strategy and brand outreach to commercial negotiations and partnership management, we oversee the partnership journey from concept through to execution, ensuring every collaboration delivers value for both our clients and their brand partners.</p>
+      <p>We believe the strongest partnerships are built on shared values, cultural relevance and genuine brand alignment. Every project begins with understanding our client's vision, audience and objectives, allowing us to create partnerships that strengthen brand positioning while delivering measurable commercial outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="light" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div>
+        <span class="eyebrow" style="margin-bottom:18px">Services</span>
+        <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">What we do<span class="dot">.</span></h2>
+      </div>
+      <p class="small" style="max-width:34ch">Seven ways we take a project from a sponsorship deck to signed commercial partners.</p>
+    </div>
+    <div class="svc rv">
+      <article><span class="num">01</span><h3>Sponsorship<br>Strategy</h3><p>Developing tailored commercial partnership strategies aligned with your event, campaign or business objectives.</p></article>
+      <article><span class="num">02</span><h3>Brand<br>Partnerships</h3><p>Researching, identifying and securing brand partners that genuinely align with your audience and vision.</p></article>
+      <article><span class="num">03</span><h3>Brand<br>Outreach</h3><p>Managing strategic outreach, relationship building and partnership conversations on your behalf.</p></article>
+      <article><span class="num">04</span><h3>Partnership<br>Negotiation</h3><p>Leading commercial negotiations and supporting partnerships through to agreement.</p></article>
+      <article><span class="num">05</span><h3>Gifting<br>Partnerships</h3><p>Securing product, service and value-in-kind partnerships that enhance guest experiences and reduce event costs.</p></article>
+      <article><span class="num">06</span><h3>Commercial<br>Consultancy</h3><p>Providing strategic guidance throughout the sponsorship journey, from planning through to execution.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div>
+        <span class="eyebrow" style="margin-bottom:18px">Projects</span>
+        <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">Selected<br>work<span class="dot">.</span></h2>
+      </div>
+      <p class="small" style="max-width:34ch">Open a project to read the brief.</p>
+    </div>
+
+    <div class="proj rv">
+      <details>
+        <summary>Krept x White Claw <span class="tag">Music × Drinks</span></summary>
+        <div class="body"><p class="small">A brand partnership pairing one of UK rap's defining artists with a global hard seltzer brand.</p></div>
+      </details>
+      <details>
+        <summary>Dami Hope x Snowbunny <span class="tag">Retail Pop-Up</span></summary>
+        <div class="body"><p class="small">Partnership support for a talent-led pop-up shop, connecting a personality-driven audience with a retail activation.</p></div>
+      </details>
+      <details>
+        <summary>British Museum Couture <span class="tag">Fashion × Heritage</span></summary>
+        <div class="body"><p class="small">Supporting the commercial partnership strategy for a landmark couture fashion event hosted at the British Museum, connecting brands with a unique celebration of fashion, culture and heritage.</p></div>
+      </details>
+      <details>
+        <summary>Black British Comedy Awards <span class="tag">Entertainment</span></summary>
+        <div class="body"><p class="small">Leading sponsorship strategy and brand partnership outreach for a celebration of Black British comedy, connecting culturally aligned brands with one of the UK's entertainment events.</p></div>
+      </details>
+    </div>
+
+    <p class="small rv" style="margin-top:32px;max-width:52ch;opacity:.6">As our portfolio continues to grow, this section will showcase completed partnerships, campaign outcomes and commercial results.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="light" id="contact">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow" style="margin-bottom:22px">Contact</span>
+      <h2 class="stack">Let's build<br>something<br>meaningful<span class="dot">.</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rv">
+        <p class="lede">Whether you're planning a fashion showcase, cultural experience, awards ceremony or live event, we'd love to hear about your project.</p>
+        <p class="small" style="margin-top:18px">If you're looking to secure sponsorship, brand partnerships or commercial collaborations, let's start the conversation.</p>
+        <div class="contact-direct" style="margin-top:clamp(32px,4vw,56px)">
+          <div>
+            <span class="eyebrow" style="margin-bottom:10px">Email</span>
+            <a href="mailto:hello@loudhaus.com">hello@loudhaus.com</a>
+          </div>
+          <div>
+            <span class="eyebrow" style="margin-bottom:10px">Instagram</span>
+            <a href="https://www.instagram.com/itsloudhaus" target="_blank" rel="noopener">@itsloudhaus</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <form id="enquiry">
+          <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
+          <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
+          <label class="field"><span>Project or event</span><input type="text" name="project"></label>
+          <label class="field"><span>Tell us about it</span><textarea name="message" required></textarea></label>
+          <button type="submit">Start the conversation</button>
+          <p class="small" id="formnote" style="margin-top:16px;opacity:0;transition:opacity .3s">Opening your email app with the message ready to send.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-mark">Loud<br>Haus<span class="dot">.</span></div>
+    <div class="footer-meta">
+      <span>Strategic Brand Partnerships</span>
+      <a href="mailto:hello@loudhaus.com">hello@loudhaus.com</a>
+      <a href="https://www.instagram.com/itsloudhaus" target="_blank" rel="noopener">Instagram</a>
+      <span>&copy; <span id="yr"></span> Loud Haus</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('loaded');
+document.body.classList.add('loaded');
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* scroll reveals */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+/* header inverts over cream sections */
+var hdr = document.getElementById('hdr');
+var lights = document.querySelectorAll('.light');
+function syncHeader(){
+  var y = hdr.getBoundingClientRect().height * 0.6, on = false;
+  lights.forEach(function(s){
+    var r = s.getBoundingClientRect();
+    if(r.top <= y && r.bottom > y) on = true;
+  });
+  hdr.classList.toggle('on-light', on);
+}
+syncHeader();
+addEventListener('scroll', syncHeader, {passive:true});
+addEventListener('resize', syncHeader);
+
+/* contact form -> mailto (no backend needed on GitHub Pages) */
+document.getElementById('enquiry').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var f = ev.target;
+  var subject = 'Partnership enquiry — ' + (f.project.value || f.name.value);
+  var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value +
+             '\nProject: ' + (f.project.value || '—') + '\n\n' + f.message.value;
+  document.getElementById('formnote').style.opacity = '1';
+  window.location.href = 'mailto:hello@loudhaus.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
