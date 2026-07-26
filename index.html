@@ -260,6 +260,17 @@ footer{padding:clamp(48px,6vw,88px) var(--gut) 34px;border-top:1px solid var(--r
 .shots figure.wide img{aspect-ratio:16/10}
 .shots button:hover img{transform:scale(1.045)}
 .shots button:focus-visible{outline:2px solid var(--cream);outline-offset:-2px}
+.shots figure::after{
+  content:"";position:absolute;right:10px;bottom:10px;width:26px;height:26px;
+  background:
+    linear-gradient(var(--cream),var(--cream)) no-repeat 50% 50%/11px 1.5px,
+    linear-gradient(var(--cream),var(--cream)) no-repeat 50% 50%/1.5px 11px,
+    rgba(19,4,8,.55);
+  border:1px solid rgba(237,232,226,.5);
+  opacity:.85;pointer-events:none;transition:opacity .3s,background-color .3s;
+  backdrop-filter:blur(3px);
+}
+.shots figure:hover::after{opacity:1;background-color:rgba(19,4,8,.85)}
 
 .textcase{border-top:1px solid var(--rule-on-ox);padding:clamp(24px,3vw,38px) 0}
 .textcase h3{
@@ -393,7 +404,7 @@ footer{padding:clamp(48px,6vw,88px) var(--gut) 34px;border-top:1px solid var(--r
         <span class="eyebrow" style="margin-bottom:18px">Projects</span>
         <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">Selected<br>work<span class="dot">.</span></h2>
       </div>
-      <p class="small" style="max-width:34ch">Partnerships delivered across music, retail and entertainment. Tap any image to enlarge.</p>
+      <p class="small" style="max-width:34ch">Partnerships delivered across music, retail and entertainment. Tap any image to open the gallery and swipe through.</p>
     </div>
 
     <article class="case rv">
