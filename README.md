@@ -30,3 +30,11 @@ Published with GitHub Pages from the `main` branch.
 
 ## Contact
 hello@loudhaus.com · [@itsloudhaus](https://www.instagram.com/itsloudhaus)
+
+## Images
+`img/` holds the site photography. Each shot has two files:
+- `name.webp` — up to 1500px, used in the lightbox
+- `name-sm.webp` — up to 760px, used in the grid
+
+Prefixes: `wc-` White Claw, `sb-` Snowbunny, `gq-` GQ Men of the Year.
+To add a shot, export both sizes and copy an existing `<figure>` block in the relevant case study.
