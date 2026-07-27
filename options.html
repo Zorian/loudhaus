@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work page — six options</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ox:#4A0D19; --ox-deep:#310810; --cream:#EDE8E2;
+  --rule:rgba(74,13,25,.16); --rule-l:rgba(237,232,226,.2);
+  --sans:"Poppins",system-ui,sans-serif;
+  --gut:clamp(18px,4vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--cream);color:var(--ox);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* chooser chrome */
+.head{padding:clamp(24px,5vw,60px) var(--gut) 0}
+.head h1{font-weight:800;text-transform:uppercase;font-size:clamp(2rem,6vw,4.4rem);
+  line-height:.86;letter-spacing:-.04em}
+.head p{margin-top:14px;max-width:56ch;font-size:clamp(.95rem,1.2vw,1.1rem);line-height:1.5;opacity:.7}
+.opt{padding:clamp(40px,6vw,90px) var(--gut);border-top:1px solid var(--rule);margin-top:clamp(40px,6vw,80px)}
+.opt.dark{background:var(--ox);color:var(--cream);border-top-color:var(--rule-l)}
+.opt-head{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline;margin-bottom:clamp(22px,3vw,40px)}
+.opt-num{font-size:12px;font-weight:500;letter-spacing:.2em;opacity:.45}
+.opt-name{font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2.4rem);
+  letter-spacing:-.03em;line-height:1}
+.opt-note{font-size:.92rem;line-height:1.5;opacity:.6;max-width:44ch;flex-basis:100%}
+.wrap{max-width:1400px;margin:0 auto}
+
+/* ============ 01 CONTACT SHEET ============ */
+.cs-stage{display:flex;justify-content:center;background:var(--ox-deep);
+  height:min(460px,52vh);align-items:center;margin-bottom:18px}
+.cs-stage img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.cs-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:6px}
+.cs-thumbs button{all:unset;cursor:pointer;display:block;aspect-ratio:3/4;overflow:hidden;
+  background:var(--ox-deep);opacity:.42;transition:opacity .25s}
+.cs-thumbs button:hover,.cs-thumbs button[aria-current="true"]{opacity:1}
+.cs-thumbs img{width:100%;height:100%;object-fit:cover}
+.cs-cap{display:flex;justify-content:space-between;font-size:12px;opacity:.55;margin-bottom:16px}
+
+/* ============ 02 FILMSTRIP ============ */
+.film{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:14px;scrollbar-width:thin}
+.film figure{margin:0;flex:0 0 auto;scroll-snap-align:center;width:min(300px,70vw)}
+.film .box{background:var(--ox-deep);aspect-ratio:3/4;overflow:hidden}
+.film img{width:100%;height:100%;object-fit:cover}
+.film figcaption{font-size:12px;margin-top:8px;opacity:.6}
+.film-rail{display:flex;gap:10px;margin-top:14px}
+.film-rail button{width:44px;height:44px;background:transparent;border:1px solid var(--rule-l);
+  color:inherit;cursor:pointer;font-size:16px}
+.film-rail button:hover{background:var(--cream);color:var(--ox)}
+
+/* ============ 03 TYPE INDEX ============ */
+.idx{border-top:1px solid var(--rule)}
+.idx details{border-bottom:1px solid var(--rule)}
+.idx summary{list-style:none;cursor:pointer;padding:clamp(16px,2.2vw,30px) 0;
+  display:flex;align-items:baseline;justify-content:space-between;gap:18px;
+  font-weight:800;text-transform:uppercase;letter-spacing:-.035em;
+  font-size:clamp(1.5rem,5vw,4rem);line-height:.94;
+  transition:padding-left .45s cubic-bezier(.16,1,.3,1)}
+.idx summary::-webkit-details-marker{display:none}
+.idx summary:hover{padding-left:clamp(8px,1.4vw,22px)}
+.idx summary .c{font-size:12px;font-weight:400;opacity:.4;letter-spacing:.14em;flex:0 0 auto}
+.idx .row{display:flex;gap:8px;overflow-x:auto;padding:0 0 clamp(18px,2.4vw,32px)}
+.idx .row img{flex:0 0 auto;width:clamp(120px,15vw,190px);aspect-ratio:3/4;object-fit:cover;background:var(--ox-deep)}
+
+/* ============ 04 PRINT STACK ============ */
+.stack-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+.stack{position:relative;width:min(320px,74vw);aspect-ratio:3/4}
+.stack figure{position:absolute;inset:0;margin:0;background:var(--ox-deep);
+  box-shadow:0 18px 50px rgba(49,8,16,.28);
+  transition:transform .55s cubic-bezier(.16,1,.3,1),opacity .45s}
+.stack img{width:100%;height:100%;object-fit:cover}
+.stack-meta{display:flex;gap:18px;align-items:baseline;font-size:12px;opacity:.6}
+.stack-btn{padding:13px 26px;border:1px solid var(--rule);background:transparent;color:inherit;
+  cursor:pointer;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+.stack-btn:hover{background:var(--ox);color:var(--cream);border-color:var(--ox)}
+
+/* ============ 05 TICKER ============ */
+.tick{overflow:hidden;margin-bottom:10px}
+.tick-title{font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.45;margin-bottom:8px}
+.tick-run{display:flex;gap:8px;width:max-content;animation:run 42s linear infinite}
+.tick:nth-of-type(even) .tick-run{animation-direction:reverse}
+.tick:hover .tick-run{animation-play-state:paused}
+.tick img{width:clamp(110px,13vw,170px);aspect-ratio:3/4;object-fit:cover;background:var(--ox-deep)}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ 06 SPLIT VIEWER ============ */
+.sv{display:grid;gap:clamp(22px,3vw,48px);grid-template-columns:1fr}
+@media(min-width:900px){.sv{grid-template-columns:minmax(0,.6fr) minmax(0,1.4fr);align-items:start}}
+.sv-list{display:flex;flex-direction:column}
+.sv-list button{all:unset;cursor:pointer;padding:11px 0;border-bottom:1px solid var(--rule);
+  font-weight:800;text-transform:uppercase;letter-spacing:-.025em;
+  font-size:clamp(1.05rem,1.8vw,1.7rem);line-height:1.08;opacity:.35;transition:opacity .25s}
+.sv-list button:hover,.sv-list button[aria-current="true"]{opacity:1}
+.sv-list span{display:block;font-size:11px;font-weight:400;letter-spacing:.16em;opacity:.6;margin-top:4px}
+.sv-stage{background:var(--ox-deep);height:min(500px,58vh);display:flex;align-items:center;justify-content:center;position:relative}
+.sv-stage img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
+.sv-bar{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:12px;opacity:.6}
+.sv-bar button{width:40px;height:40px;background:transparent;border:1px solid var(--rule);
+  color:inherit;cursor:pointer}
+.sv-bar button:hover{background:var(--ox);color:var(--cream)}
+.sv-bar .sp{margin-left:auto}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <h1>Work page<br>six options</h1>
+  <p>Each one uses the real photography. Every layout keeps images small enough that the WhatsApp compression stays invisible. Pick a number and I'll build it properly.</p>
+</header>
+
+<!-- 01 -->
+<section class="opt dark">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">01</span><span class="opt-name">Contact sheet</span>
+      <span class="opt-note">Everything visible at once, one big. Closest to how a photographer presents a shoot.</span></div>
+    <div class="cs-cap"><span id="cs-title"></span><span id="cs-num"></span></div>
+    <div class="cs-stage"><img id="cs-main" alt=""></div>
+    <div class="cs-thumbs" id="cs-thumbs"></div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="opt dark">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">02</span><span class="opt-name">Filmstrip</span>
+      <span class="opt-note">Scroll sideways, snaps to each frame. Feels native on a phone; you always see the next one coming.</span></div>
+    <div class="film" id="film"></div>
+    <div class="film-rail">
+      <button type="button" id="f-prev" aria-label="Scroll left">&#8592;</button>
+      <button type="button" id="f-next" aria-label="Scroll right">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">03</span><span class="opt-name">Type index</span>
+      <span class="opt-note">Project names huge, photos hidden until opened. The most Stranger-like of the six.</span></div>
+    <div class="idx" id="idx"></div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">04</span><span class="opt-name">Print stack</span>
+      <span class="opt-note">Photos stacked like physical prints. Tap the top one to deal the next.</span></div>
+    <div class="stack-wrap">
+      <div class="stack" id="stack"></div>
+      <div class="stack-meta"><span id="st-title"></span><span id="st-num"></span></div>
+      <button class="stack-btn" type="button" id="st-next">Next print</button>
+    </div>
+  </div>
+</section>
+
+<!-- 05 -->
+<section class="opt dark">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">05</span><span class="opt-name">Ticker</span>
+      <span class="opt-note">One row per project, drifting on its own. No clicking needed. Hover to pause.</span></div>
+    <div id="ticks"></div>
+  </div>
+</section>
+
+<!-- 06 -->
+<section class="opt">
+  <div class="wrap">
+    <div class="opt-head"><span class="opt-num">06</span><span class="opt-name">Split viewer</span>
+      <span class="opt-note">Projects listed left, photos play through on the right. Easiest to browse by client.</span></div>
+    <div class="sv">
+      <div class="sv-list" id="sv-list"></div>
+      <div>
+        <div class="sv-stage"><img id="sv-img" alt=""></div>
+        <div class="sv-bar">
+          <button type="button" id="sv-prev" aria-label="Previous">&#8592;</button>
+          <button type="button" id="sv-next" aria-label="Next">&#8594;</button>
+          <span id="sv-cap"></span><span class="sp" id="sv-num"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+var SHOTS=[
+ ['gq-wall','GQ Men of the Year'],['gq-wall-2','GQ Men of the Year'],
+ ['gq-arrival','GQ Men of the Year'],['gq-portrait','GQ Men of the Year'],
+ ['gq-detail','GQ Men of the Year'],
+ ['wc-krept-claw','Krept x White Claw'],['wc-krept-stage','Krept x White Claw'],
+ ['wc-guests','Krept x White Claw'],['wc-clawmachine','Krept x White Claw'],
+ ['wc-canwall','Krept x White Claw'],['wc-neon','Krept x White Claw'],
+ ['wc-cans','Krept x White Claw'],
+ ['sb-wall','Dami Hope x Snowbunny'],['sb-floor','Dami Hope x Snowbunny'],
+ ['sb-bumbu','Dami Hope x Snowbunny'],['sb-render','Dami Hope x Snowbunny']
+];
+var PROJECTS=['GQ Men of the Year','Krept x White Claw','Dami Hope x Snowbunny'];
+function sm(n){return 'img/'+n+'-sm.webp'} function lg(n){return 'img/'+n+'.webp'}
+function by(p){return SHOTS.filter(function(s){return s[1]===p})}
+
+/* ---- 01 contact sheet ---- */
+(function(){
+  var main=document.getElementById('cs-main'),t=document.getElementById('cs-title'),
+      nu=document.getElementById('cs-num'),box=document.getElementById('cs-thumbs'),cur=0;
+  SHOTS.forEach(function(s,i){
+    var b=document.createElement('button'); b.type='button';
+    b.setAttribute('aria-label',s[1]+' image '+(i+1));
+    b.innerHTML='<img src="'+sm(s[0])+'" alt="" loading="lazy">';
+    b.addEventListener('click',function(){ set(i); });
+    box.appendChild(b);
+  });
+  function set(i){
+    if(box.children[cur]) box.children[cur].removeAttribute('aria-current');
+    cur=i; box.children[i].setAttribute('aria-current','true');
+    main.src=lg(SHOTS[i][0]); main.alt=SHOTS[i][1];
+    t.textContent=SHOTS[i][1]; nu.textContent=(i+1)+' / '+SHOTS.length;
+  }
+  set(0);
+})();
+
+/* ---- 02 filmstrip ---- */
+(function(){
+  var f=document.getElementById('film');
+  SHOTS.forEach(function(s){
+    var fig=document.createElement('figure');
+    fig.innerHTML='<div class="box"><img src="'+sm(s[0])+'" alt="'+s[1]+'" loading="lazy"></div>'+
+                  '<figcaption>'+s[1]+'</figcaption>';
+    f.appendChild(fig);
+  });
+  function step(d){ f.scrollBy({left:d*(f.clientWidth*0.8),behavior:'smooth'}); }
+  document.getElementById('f-prev').addEventListener('click',function(){step(-1)});
+  document.getElementById('f-next').addEventListener('click',function(){step(1)});
+})();
+
+/* ---- 03 type index ---- */
+(function(){
+  var idx=document.getElementById('idx');
+  PROJECTS.forEach(function(p,n){
+    var set=by(p);
+    var d=document.createElement('details'); if(n===0) d.open=true;
+    var imgs=set.map(function(s){return '<img src="'+sm(s[0])+'" alt="'+p+'" loading="lazy">'}).join('');
+    d.innerHTML='<summary>'+p+'<span class="c">'+set.length+' images</span></summary>'+
+                '<div class="row">'+imgs+'</div>';
+    idx.appendChild(d);
+  });
+  ['British Museum Couture Fashion Event','Black British Comedy Awards'].forEach(function(p){
+    var d=document.createElement('details');
+    d.innerHTML='<summary>'+p+'<span class="c">no images yet</span></summary>';
+    idx.appendChild(d);
+  });
+})();
+
+/* ---- 04 print stack ---- */
+(function(){
+  var st=document.getElementById('stack'),t=document.getElementById('st-title'),
+      nu=document.getElementById('st-num'),order=SHOTS.map(function(_,i){return i});
+  SHOTS.forEach(function(s){
+    var f=document.createElement('figure');
+    f.innerHTML='<img src="'+sm(s[0])+'" alt="'+s[1]+'" loading="lazy">';
+    st.appendChild(f);
+  });
+  function paint(){
+    order.forEach(function(idx,pos){
+      var f=st.children[idx];
+      var vis=pos<5;
+      f.style.zIndex=String(50-pos);
+      f.style.opacity=vis?'1':'0';
+      f.style.transform='translate('+(pos*7)+'px,'+(pos*-7)+'px) rotate('+(pos%2?1.6:-1.4)*pos*0.6+'deg)';
+      f.style.pointerEvents=pos===0?'auto':'none';
+    });
+    t.textContent=SHOTS[order[0]][1];
+    nu.textContent=(SHOTS.length-order.length+1)+' of '+SHOTS.length+' — tap to deal';
+  }
+  function next(){ order.push(order.shift()); paint(); }
+  st.addEventListener('click',next);
+  document.getElementById('st-next').addEventListener('click',next);
+  paint(); nu.textContent='Tap the print to deal the next';
+})();
+
+/* ---- 05 ticker ---- */
+(function(){
+  var box=document.getElementById('ticks');
+  PROJECTS.forEach(function(p){
+    var set=by(p), imgs=set.concat(set).concat(set)
+      .map(function(s){return '<img src="'+sm(s[0])+'" alt="'+p+'" loading="lazy">'}).join('');
+    var d=document.createElement('div'); d.className='tick';
+    d.innerHTML='<div class="tick-title">'+p+'</div><div class="tick-run">'+imgs+'</div>';
+    box.appendChild(d);
+  });
+})();
+
+/* ---- 06 split viewer ---- */
+(function(){
+  var list=document.getElementById('sv-list'),img=document.getElementById('sv-img'),
+      cap=document.getElementById('sv-cap'),nu=document.getElementById('sv-num'),
+      proj=PROJECTS[0], set=by(proj), i=0;
+  PROJECTS.forEach(function(p,n){
+    var b=document.createElement('button'); b.type='button';
+    b.innerHTML=p+'<span>'+by(p).length+' images</span>';
+    b.addEventListener('click',function(){ pick(p,n); });
+    list.appendChild(b);
+  });
+  ['British Museum Couture Fashion Event','Black British Comedy Awards'].forEach(function(p){
+    var b=document.createElement('button'); b.type='button'; b.disabled=true;
+    b.style.cursor='default';
+    b.innerHTML=p+'<span>coming soon</span>';
+    list.appendChild(b);
+  });
+  function pick(p,n){
+    Array.prototype.forEach.call(list.children,function(c){c.removeAttribute('aria-current')});
+    list.children[n].setAttribute('aria-current','true');
+    proj=p; set=by(p); i=0; show();
+  }
+  function show(){
+    img.src=lg(set[i][0]); img.alt=proj;
+    cap.textContent=proj; nu.textContent=(i+1)+' / '+set.length;
+  }
+  document.getElementById('sv-prev').addEventListener('click',function(){ i=(i-1+set.length)%set.length; show(); });
+  document.getElementById('sv-next').addEventListener('click',function(){ i=(i+1)%set.length; show(); });
+  pick(PROJECTS[0],0);
+})();
+</script>
+</body>
+</html>
