@@ -49,6 +49,12 @@ img{display:block;max-width:100%}
   font-size:clamp(2.6rem,8vw,7rem);
   line-height:.86;letter-spacing:-.042em;
 }
+/* on narrow screens run it as one full-width line instead of a stacked block,
+   so it fills the column rather than leaving a gap down the right */
+@media(max-width:899px){
+  .statement{font-size:clamp(1.5rem,9.7vw,5rem);line-height:1}
+  .statement br{display:none}
+}
 .lines{display:flex;flex-direction:column;gap:1.15em;max-width:44ch}
 .lines p{font-size:clamp(1.05rem,1.5vw,1.42rem);line-height:1.45;font-weight:400}
 @media(min-width:900px){.lines{padding-top:.5em}}
