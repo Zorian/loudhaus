@@ -3,714 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loud Haus — Strategic Brand Partnerships for Fashion, Culture &amp; Entertainment</title>
-<meta name="description" content="Loud Haus is a boutique brand partnerships consultancy connecting brands with fashion, cultural and entertainment experiences through meaningful commercial partnerships.">
-<meta property="og:title" content="Loud Haus — Strategic Brand Partnerships">
-<meta property="og:description" content="Boutique brand partnerships consultancy for fashion, culture and entertainment.">
-<meta property="og:type" content="website">
+<title>Loud Haus</title>
+<meta name="description" content="Brand partnerships consultancy for fashion, culture and entertainment. London.">
+<meta property="og:title" content="Loud Haus">
+<meta property="og:description" content="Brand partnerships consultancy for fashion, culture and entertainment.">
 <meta property="og:image" content="https://zorian.github.io/loudhaus/img/og.jpg">
+<meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4A0D19">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/gq-wall.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234A0D19'/%3E%3Ccircle cx='50' cy='58' r='20' fill='%23EDE8E2'/%3E%3C/svg%3E">
 <style>
-:root{
-  --ox:#4A0D19;
-  --ox-deep:#310810;
-  --ox-lift:#6E1A28;
-  --cream:#EDE8E2;
-  --cream-2:#E3DCD4;
-  --rule-on-ox:rgba(237,232,226,.20);
-  --rule-on-cream:rgba(74,13,25,.22);
-  --gut:clamp(20px,5vw,72px);
-  --display:"Poppins",system-ui,sans-serif;
-  --body:"Fraunces",Georgia,serif;
-  --mono:"Space Mono",ui-monospace,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:var(--ox);color:var(--cream);
-  font-family:var(--body);font-weight:300;
-  font-size:clamp(16px,1.05vw,18px);line-height:1.6;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-::selection{background:var(--cream);color:var(--ox)}
-a{color:inherit}
-:focus-visible{outline:2px solid currentColor;outline-offset:4px}
-
-/* ---------- type system ---------- */
-.eyebrow{
-  font-family:var(--mono);font-size:11px;letter-spacing:.22em;
-  text-transform:uppercase;opacity:.6;display:block;
-}
-.stack{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  line-height:.86;letter-spacing:-.035em;
-  font-size:clamp(2.6rem,8.4vw,7.4rem);
-}
-.stack .dot{color:inherit}
-.lede{
-  font-family:var(--body);font-weight:300;
-  font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:1.45;
-}
-.small{font-size:.92rem;opacity:.78;line-height:1.65}
-
-/* ---------- shell ---------- */
-section{padding:clamp(72px,10vw,150px) var(--gut);position:relative}
-.light{background:var(--cream);color:var(--ox)}
-.light .eyebrow{opacity:.55}
-.wrap{max-width:1360px;margin:0 auto}
-
-/* ---------- nav ---------- */
-header{
-  position:fixed;inset:0 0 auto 0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:16px var(--gut);
-  background:rgba(74,13,25,.86);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--rule-on-ox);
-  transition:background .4s ease,color .4s ease,border-color .4s ease;
-}
-header.on-light{
-  background:rgba(237,232,226,.9);color:var(--ox);
-  border-bottom-color:var(--rule-on-cream);
-}
-.mark{
-  font-family:var(--display);font-weight:800;font-size:15px;
-  letter-spacing:-.02em;text-transform:uppercase;text-decoration:none;
-  line-height:.9;display:block;
-}
-nav{display:flex;gap:clamp(14px,2vw,32px)}
-nav a{
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
-  text-transform:uppercase;text-decoration:none;opacity:.7;
-  transition:opacity .25s;
-}
-nav a:hover{opacity:1}
-@media(max-width:640px){nav a:nth-child(-n+2){display:none}}
-
-/* ---------- hero ---------- */
-.hero{
-  min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;
-  padding-top:120px;padding-bottom:clamp(28px,4vw,52px);
-}
-.hero h1{font-size:clamp(3.1rem,12.2vw,11rem)}
-.hero h1>span{display:block;overflow:hidden}
-.hero h1>span>i{display:block;font-style:normal;transform:translateY(103%)}
-.loaded .hero h1>span>i{
-  transform:translateY(0);
-  transition:transform 1.05s cubic-bezier(.16,1,.3,1);
-}
-.loaded .hero h1>span:nth-child(2)>i{transition-delay:.09s}
-.loaded .hero h1>span:nth-child(3)>i{transition-delay:.18s}
-.hero-foot{
-  display:grid;grid-template-columns:1fr;gap:28px;
-  margin-top:clamp(32px,5vw,64px);
-  border-top:1px solid var(--rule-on-ox);padding-top:26px;
-}
-@media(min-width:900px){.hero-foot{grid-template-columns:1.15fr 1fr;gap:64px;align-items:start}}
-.hero-foot p+p{margin-top:14px}
-.ticker{
-  display:flex;flex-wrap:wrap;gap:8px 0;align-items:baseline;
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;opacity:.72;
-}
-.ticker span:not(:last-child)::after{content:" · ";opacity:.5;padding:0 .5em}
-
-/* ---------- about ---------- */
-.about-grid{display:grid;gap:clamp(28px,4vw,72px)}
-@media(min-width:900px){.about-grid{grid-template-columns:.85fr 1.15fr}}
-.about-grid h2{margin-bottom:.4em}
-.about-body p+p{margin-top:1.15em}
-.about-body p:first-child{font-size:clamp(1.1rem,1.7vw,1.4rem);line-height:1.5}
-
-/* ---------- services ---------- */
-.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:clamp(34px,5vw,64px)}
-.svc{
-  display:grid;gap:1px;background:var(--rule-on-cream);
-  border:1px solid var(--rule-on-cream);
-}
-@media(min-width:700px){.svc{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1080px){.svc{grid-template-columns:repeat(3,1fr)}}
-.svc article{
-  background:var(--cream);padding:clamp(24px,2.6vw,38px);
-  min-height:clamp(210px,20vw,280px);
-  display:flex;flex-direction:column;justify-content:space-between;gap:20px;
-  transition:background .35s ease,color .35s ease;
-}
-.svc article:hover,.svc article:focus-within{background:var(--ox);color:var(--cream)}
-.svc h3{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(1.15rem,1.7vw,1.5rem);line-height:.98;letter-spacing:-.025em;
-}
-.svc p{font-size:.95rem;line-height:1.55;opacity:.85}
-.svc .num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;opacity:.5}
-
-/* ---------- projects ---------- */
-.proj{border-top:1px solid var(--rule-on-ox)}
-.proj details{border-bottom:1px solid var(--rule-on-ox)}
-.proj summary{
-  list-style:none;cursor:pointer;padding:clamp(20px,2.6vw,34px) 0;
-  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(1.4rem,4.4vw,3.4rem);line-height:.95;letter-spacing:-.03em;
-  transition:padding-left .4s cubic-bezier(.16,1,.3,1),opacity .3s;
-}
-.proj summary::-webkit-details-marker{display:none}
-.proj summary:hover{padding-left:clamp(10px,1.6vw,26px)}
-.proj summary .tag{
-  font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.18em;
-  opacity:.55;white-space:nowrap;flex-shrink:0;
-}
-.proj details[open] summary{opacity:.55}
-.proj .body{padding:0 0 clamp(24px,3vw,40px);max-width:60ch}
-@media(max-width:640px){.proj summary .tag{display:none}}
-
-/* ---------- contact ---------- */
-.contact-grid{display:grid;gap:clamp(32px,4vw,72px);margin-top:clamp(30px,4vw,56px)}
-@media(min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}}
-.field{display:block;margin-bottom:20px}
-.field span{
-  font-family:var(--mono);font-size:11px;letter-spacing:.2em;
-  text-transform:uppercase;display:block;margin-bottom:8px;opacity:.6;
-}
-.field input,.field textarea{
-  width:100%;background:transparent;border:0;
-  border-bottom:1px solid var(--rule-on-cream);
-  padding:10px 0;font-family:var(--body);font-size:1.05rem;
-  color:var(--ox);transition:border-color .3s;
-}
-.field textarea{resize:vertical;min-height:110px}
-.field input:focus,.field textarea:focus{outline:none;border-bottom-color:var(--ox)}
-button{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:.95rem;letter-spacing:.02em;
-  background:var(--ox);color:var(--cream);border:1px solid var(--ox);
-  padding:16px 34px;cursor:pointer;
-  transition:background .3s,color .3s;
-}
-button:hover{background:transparent;color:var(--ox)}
-.contact-direct a{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(1.1rem,2.4vw,2rem);letter-spacing:-.02em;
-  text-decoration:none;display:inline-block;
-  border-bottom:2px solid currentColor;line-height:1.1;
-}
-.contact-direct a:hover{opacity:.6}
-.contact-direct div+div{margin-top:32px}
-
-/* ---------- footer ---------- */
-footer{padding:clamp(48px,6vw,88px) var(--gut) 34px;border-top:1px solid var(--rule-on-ox)}
-.footer-mark{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(3.4rem,17vw,15rem);line-height:.82;letter-spacing:-.045em;
-}
-.footer-meta{
-  display:flex;flex-wrap:wrap;gap:14px 32px;justify-content:space-between;
-  margin-top:clamp(28px,4vw,54px);padding-top:22px;
-  border-top:1px solid var(--rule-on-ox);
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;
-}
-.footer-meta a{text-decoration:none}
-.footer-meta a:hover{opacity:1;text-decoration:underline}
-
-
-/* ---------- case studies ---------- */
-.case{border-top:1px solid var(--cream);padding:clamp(48px,7vw,104px) 0 clamp(38px,5vw,72px)}
-.case:first-of-type{border-top:1px solid var(--rule-on-ox)}
-.shots-label{
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
-  opacity:.45;margin-bottom:12px;display:block;
-}
-@media(min-width:960px){.shots-label{margin-top:-4px}}
-.case-grid{display:grid;gap:clamp(24px,3vw,56px)}
-@media(min-width:960px){.case-grid{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:start}}
-.case-text{position:relative}
-@media(min-width:960px){.case-text{position:sticky;top:96px}}
-.case-text h3{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(1.7rem,3.4vw,3rem);line-height:.92;letter-spacing:-.032em;
-  margin:12px 0 16px;
-}
-.case-meta{
-  display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:18px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;
-  text-transform:uppercase;opacity:.55;
-}
-.case-meta span{border:1px solid var(--rule-on-ox);padding:5px 10px}
-
-.shots{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(6px,.7vw,12px)}
-.shots figure{margin:0;position:relative;overflow:hidden;background:var(--ox-deep);grid-column:span 3}
-.shots figure.wide{grid-column:span 6}
-.shots figure.third{grid-column:span 2}
-@media(max-width:620px){
-  .shots figure{grid-column:span 3}
-  .shots figure.third{grid-column:span 3}
-  .shots figure.wide{grid-column:span 6}
-}
-.shots button{
-  all:unset;display:block;width:100%;cursor:zoom-in;
-}
-.shots img{
-  display:block;width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;
-  transition:transform .7s cubic-bezier(.16,1,.3,1),opacity .5s;
-}
-.shots figure.wide img{aspect-ratio:16/10}
-.shots button:hover img{transform:scale(1.045)}
-.shots button:focus-visible{outline:2px solid var(--cream);outline-offset:-2px}
-.shots figure::after{
-  content:"";position:absolute;right:10px;bottom:10px;width:26px;height:26px;
-  background:
-    linear-gradient(var(--cream),var(--cream)) no-repeat 50% 50%/11px 1.5px,
-    linear-gradient(var(--cream),var(--cream)) no-repeat 50% 50%/1.5px 11px,
-    rgba(19,4,8,.55);
-  border:1px solid rgba(237,232,226,.5);
-  opacity:.85;pointer-events:none;transition:opacity .3s,background-color .3s;
-  backdrop-filter:blur(3px);
-}
-.shots figure:hover::after{opacity:1;background-color:rgba(19,4,8,.85)}
-
-.textcase{border-top:1px solid var(--rule-on-ox);padding:clamp(24px,3vw,38px) 0}
-.textcase h3{
-  font-family:var(--display);font-weight:800;text-transform:uppercase;
-  font-size:clamp(1.3rem,2.6vw,2.1rem);line-height:.95;letter-spacing:-.03em;margin-bottom:12px;
-}
-.textcase .body{max-width:62ch}
-
-/* ---------- lightbox ---------- */
-#lb{
-  position:fixed;inset:0;z-index:100;display:none;
-  background:rgba(19,4,8,.97);
-  align-items:center;justify-content:center;padding:clamp(12px,4vw,48px);
-}
-#lb.open{display:flex}
-#lb img{max-width:100%;max-height:88vh;object-fit:contain;display:block}
-#lb .lb-stage{position:relative;display:flex;align-items:center;justify-content:center;
-  width:100%;height:100%;touch-action:pan-y;user-select:none;-webkit-user-select:none}
-#lb img{transition:opacity .18s ease}
-#lb.swapping img{opacity:0}
-#lb .lb-count{
-  position:absolute;top:clamp(14px,3vw,30px);left:clamp(14px,3vw,30px);
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--cream);opacity:.55;
-}
-@media(prefers-reduced-motion:reduce){#lb img{transition:none}}
-#lb .lb-cap{
-  position:absolute;left:0;right:0;bottom:clamp(10px,2.5vw,22px);text-align:center;
-  font-family:var(--mono);font-size:11px;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--cream);opacity:.55;padding:0 20px;
-}
-#lb button{
-  position:absolute;background:transparent;border:1px solid var(--rule-on-ox);
-  color:var(--cream);font-family:var(--display);font-weight:800;
-  width:46px;height:46px;padding:0;font-size:16px;line-height:1;
-  display:flex;align-items:center;justify-content:center;
-}
-#lb button:hover{background:var(--cream);color:var(--ox)}
-#lb .lb-x{top:clamp(12px,3vw,28px);right:clamp(12px,3vw,28px)}
-#lb .lb-prev{left:clamp(8px,2vw,28px);top:50%;transform:translateY(-50%)}
-#lb .lb-next{right:clamp(8px,2vw,28px);top:50%;transform:translateY(-50%)}
-@media(max-width:700px){#lb .lb-prev,#lb .lb-next{display:none}}
-
-/* ---------- reveal ---------- */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rv,.hero h1>span>i{opacity:1!important;transform:none!important;transition:none!important}
-  *{animation:none!important}
-}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:"Poppins",system-ui,sans-serif;background:#310810;color:#EDE8E2;overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid #EDE8E2;outline-offset:4px}
+  .show{position:fixed;inset:0}
+  .show img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;transition:opacity 1s ease}
+  .show img.on{opacity:1}
+  .scrim{position:fixed;inset:0;background:
+    linear-gradient(180deg,rgba(49,8,16,.42) 0%,rgba(49,8,16,.06) 32%,rgba(49,8,16,.12) 62%,rgba(49,8,16,.62) 100%)}
+  .logo{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.84;
+    font-size:clamp(3.2rem,13vw,11rem);text-align:center;
+    text-shadow:0 4px 40px rgba(0,0,0,.4);white-space:nowrap;
+  }
+  .menu{
+    position:fixed;bottom:clamp(20px,3.5vw,44px);left:0;right:0;
+    display:flex;justify-content:center;gap:clamp(20px,3.5vw,52px);
+    font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  }
+  .menu a{opacity:.78;padding-bottom:4px;border-bottom:1px solid transparent;transition:.3s}
+  .menu a:hover{opacity:1;border-bottom-color:#EDE8E2}
+  .dots{position:fixed;top:clamp(18px,3vw,30px);left:50%;transform:translateX(-50%);display:flex;gap:6px}
+  .dots button{all:unset;width:6px;height:6px;border:1px solid rgba(237,232,226,.5);cursor:pointer}
+  .dots button[aria-current="true"]{background:#EDE8E2}
+  .dots button:focus-visible{outline:2px solid #EDE8E2;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.show img{transition:none}}
 </style>
 </head>
 <body>
-
-<header id="hdr">
-  <a class="mark" href="#top">Loud<br>Haus.</a>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <span class="eyebrow" style="margin-bottom:clamp(20px,3vw,40px)">Brand Partnerships Consultancy — London</span>
-    <h1 class="stack">
-      <span><i>Strategic</i></span>
-      <span><i>Brand</i></span>
-      <span><i>Partnerships</i></span>
-    </h1>
-    <div class="hero-foot">
-      <div>
-        <p class="lede">A boutique consultancy connecting brands with fashion, cultural and entertainment experiences through meaningful commercial partnerships.</p>
-      </div>
-      <div>
-        <p class="small">From sponsorship strategy and brand outreach to partnership negotiations and commercial consultancy, we help clients secure partnerships that create lasting value and meaningful brand engagement.</p>
-        <p class="small" style="margin-top:14px">Whether you're producing a fashion showcase, cultural event or awards ceremony, we develop tailored partnership strategies that connect your vision with the right brands.</p>
-      </div>
-    </div>
-    <div class="ticker" style="margin-top:26px">
-      <span>Sponsorship Strategy</span><span>Brand Partnerships</span><span>Commercial Partnerships</span><span>Brand Outreach</span><span>Partnership Negotiation</span><span>Gifting Partnerships</span><span>Commercial Consultancy</span>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="light" id="about">
-  <div class="wrap about-grid">
-    <div class="rv">
-      <span class="eyebrow" style="margin-bottom:22px">About</span>
-      <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">Partnerships<br>that matter<span class="dot">.</span></h2>
-    </div>
-    <div class="about-body rv">
-      <p>We are a boutique brand partnerships consultancy specialising in connecting brands with fashion, cultural and entertainment experiences that create meaningful commercial value.</p>
-      <p>Our approach is built on strategy, alignment and authentic relationship building. We work closely with event organisers, creatives and businesses to develop tailored partnership strategies that attract the right commercial partners — not simply the biggest names.</p>
-      <p>From sponsorship strategy and brand outreach to commercial negotiations and partnership management, we oversee the partnership journey from concept through to execution, ensuring every collaboration delivers value for both our clients and their brand partners.</p>
-      <p>We believe the strongest partnerships are built on shared values, cultural relevance and genuine brand alignment. Every project begins with understanding our client's vision, audience and objectives, allowing us to create partnerships that strengthen brand positioning while delivering measurable commercial outcomes.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="light" id="services" style="padding-top:0">
-  <div class="wrap">
-    <div class="svc-head rv">
-      <div>
-        <span class="eyebrow" style="margin-bottom:18px">Services</span>
-        <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">What we do<span class="dot">.</span></h2>
-      </div>
-      <p class="small" style="max-width:34ch">Seven ways we take a project from a sponsorship deck to signed commercial partners.</p>
-    </div>
-    <div class="svc rv">
-      <article><span class="num">01</span><h3>Sponsorship<br>Strategy</h3><p>Developing tailored commercial partnership strategies aligned with your event, campaign or business objectives.</p></article>
-      <article><span class="num">02</span><h3>Brand<br>Partnerships</h3><p>Researching, identifying and securing brand partners that genuinely align with your audience and vision.</p></article>
-      <article><span class="num">03</span><h3>Brand<br>Outreach</h3><p>Managing strategic outreach, relationship building and partnership conversations on your behalf.</p></article>
-      <article><span class="num">04</span><h3>Partnership<br>Negotiation</h3><p>Leading commercial negotiations and supporting partnerships through to agreement.</p></article>
-      <article><span class="num">05</span><h3>Gifting<br>Partnerships</h3><p>Securing product, service and value-in-kind partnerships that enhance guest experiences and reduce event costs.</p></article>
-      <article><span class="num">06</span><h3>Commercial<br>Consultancy</h3><p>Providing strategic guidance throughout the sponsorship journey, from planning through to execution.</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="wrap">
-    <div class="svc-head rv">
-      <div>
-        <span class="eyebrow" style="margin-bottom:18px">Projects</span>
-        <h2 class="stack" style="font-size:clamp(2.1rem,5vw,4.2rem)">Selected<br>work<span class="dot">.</span></h2>
-      </div>
-      <p class="small" style="max-width:34ch">Partnerships delivered across music, retail and entertainment. Tap any image to open the gallery and swipe through.</p>
-    </div>
-
-    <article class="case rv">
-      <div class="case-grid">
-        <div class="case-text">
-          <span class="eyebrow">Music &times; Drinks</span>
-          <h3>Krept<br>x White Claw</h3>
-          <p class="small">A brand partnership pairing one of UK rap's defining voices with a global hard seltzer brand, built around a fully branded activation: a can wall installation, a custom prize claw machine and a live performance moment.</p>
-          <div class="case-meta"><span>Brand partnership</span><span>Activation</span><span>Talent</span></div>
-        </div>
-      <div>
-      <span class="shots-label">Krept x White Claw</span>
-      <div class="shots">
-        <figure class="wide"><button type="button" data-full="img/wc-canwall.webp" data-cap="White Claw can wall installation">
-          <img src="img/wc-canwall-sm.webp" alt="White Claw can wall installation" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-krept-claw.webp" data-cap="Artist at the branded claw machine">
-          <img src="img/wc-krept-claw-sm.webp" alt="Artist at the branded claw machine" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-clawmachine.webp" data-cap="The Claw prize machine">
-          <img src="img/wc-clawmachine-sm.webp" alt="The Claw prize machine" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-guests.webp" data-cap="Guests at the activation">
-          <img src="img/wc-guests-sm.webp" alt="Guests at the activation" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-krept-stage.webp" data-cap="Performance on the night">
-          <img src="img/wc-krept-stage-sm.webp" alt="Performance on the night" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-neon.webp" data-cap="Illuminated White Claw fridge display">
-          <img src="img/wc-neon-sm.webp" alt="Illuminated White Claw fridge display" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/wc-cans.webp" data-cap="White Claw Tequila Smash range">
-          <img src="img/wc-cans-sm.webp" alt="White Claw Tequila Smash range" loading="lazy" decoding="async">
-        </button></figure>
-      </div>
-      </div>
-      </div>
-    </article>
-
-    <article class="case rv">
-      <div class="case-grid">
-        <div class="case-text">
-          <span class="eyebrow">Retail Pop-Up</span>
-          <h3>Dami Hope<br>x Snowbunny</h3>
-          <p class="small">Partnership support for a talent-led pop-up shop, connecting a personality-driven audience with a retail activation &mdash; from the store layout and merchandising plan through to a Bumbu Rum gifting partnership on the night.</p>
-          <div class="case-meta"><span>Retail</span><span>Gifting partnership</span><span>Talent</span></div>
-        </div>
-      <div>
-      <span class="shots-label">Dami Hope x Snowbunny</span>
-      <div class="shots">
-        <figure class="wide"><button type="button" data-full="img/sb-wall.webp" data-cap="Snowbunny pop-up branding">
-          <img src="img/sb-wall-sm.webp" alt="Snowbunny pop-up branding" loading="lazy" decoding="async">
-        </button></figure>
-        <figure><button type="button" data-full="img/sb-floor.webp" data-cap="Shoppers on the pop-up floor">
-          <img src="img/sb-floor-sm.webp" alt="Shoppers on the pop-up floor" loading="lazy" decoding="async">
-        </button></figure>
-        <figure><button type="button" data-full="img/sb-bumbu.webp" data-cap="Bumbu Rum gifting partnership on site">
-          <img src="img/sb-bumbu-sm.webp" alt="Bumbu Rum gifting partnership on site" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="wide"><button type="button" data-full="img/sb-render.webp" data-cap="Retail layout plan for the pop-up">
-          <img src="img/sb-render-sm.webp" alt="Retail layout plan for the pop-up" loading="lazy" decoding="async">
-        </button></figure>
-      </div>
-      </div>
-      </div>
-    </article>
-
-    <article class="case rv">
-      <div class="case-grid">
-        <div class="case-text">
-          <span class="eyebrow">Entertainment</span>
-          <h3>GQ Men<br>of the Year</h3>
-          <p class="small">Talent representation and partner liaison across one of the calendar's headline entertainment ceremonies, managing brand dressing, hospitality and on-the-night coordination.</p>
-          <div class="case-meta"><span>Talent</span><span>Live events</span><span>Brand liaison</span></div>
-        </div>
-      <div>
-      <span class="shots-label">GQ Men of the Year</span>
-      <div class="shots">
-        <figure class="third"><button type="button" data-full="img/gq-wall.webp" data-cap="Talent on the GQ Men of the Year step and repeat">
-          <img src="img/gq-wall-sm.webp" alt="Talent on the GQ Men of the Year step and repeat" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/gq-wall-2.webp" data-cap="Red carpet arrival">
-          <img src="img/gq-wall-2-sm.webp" alt="Red carpet arrival" loading="lazy" decoding="async">
-        </button></figure>
-        <figure class="third"><button type="button" data-full="img/gq-arrival.webp" data-cap="Arrival at the ceremony">
-          <img src="img/gq-arrival-sm.webp" alt="Arrival at the ceremony" loading="lazy" decoding="async">
-        </button></figure>
-        <figure><button type="button" data-full="img/gq-portrait.webp" data-cap="Portrait on the night">
-          <img src="img/gq-portrait-sm.webp" alt="Portrait on the night" loading="lazy" decoding="async">
-        </button></figure>
-        <figure><button type="button" data-full="img/gq-detail.webp" data-cap="Watch and hospitality detail">
-          <img src="img/gq-detail-sm.webp" alt="Watch and hospitality detail" loading="lazy" decoding="async">
-        </button></figure>
-      </div>
-      </div>
-      </div>
-    </article>
-
-    <div class="rv" style="margin-top:clamp(20px,3vw,40px)">
-      <article class="textcase">
-        <h3>British Museum Couture</h3>
-        <div class="body"><p class="small">Supporting the commercial partnership strategy for a landmark couture fashion event hosted at the British Museum, connecting brands with a unique celebration of fashion, culture and heritage.</p></div>
-      </article>
-      <article class="textcase">
-        <h3>Black British Comedy Awards</h3>
-        <div class="body"><p class="small">Leading sponsorship strategy and brand partnership outreach for a celebration of Black British comedy, connecting culturally aligned brands with one of the UK's entertainment events.</p></div>
-      </article>
-    </div>
-
-    <p class="small rv" style="margin-top:32px;max-width:52ch;opacity:.6">As our portfolio continues to grow, this section will showcase completed partnerships, campaign outcomes and commercial results.</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="light" id="contact">
-  <div class="wrap">
-    <div class="rv">
-      <span class="eyebrow" style="margin-bottom:22px">Contact</span>
-      <h2 class="stack">Let's build<br>something<br>meaningful<span class="dot">.</span></h2>
-    </div>
-    <div class="contact-grid">
-      <div class="rv">
-        <p class="lede">Whether you're planning a fashion showcase, cultural experience, awards ceremony or live event, we'd love to hear about your project.</p>
-        <p class="small" style="margin-top:18px">If you're looking to secure sponsorship, brand partnerships or commercial collaborations, let's start the conversation.</p>
-        <div class="contact-direct" style="margin-top:clamp(32px,4vw,56px)">
-          <div>
-            <span class="eyebrow" style="margin-bottom:10px">Email</span>
-            <a href="mailto:hello@loudhaus.com">hello@loudhaus.com</a>
-          </div>
-          <div>
-            <span class="eyebrow" style="margin-bottom:10px">Instagram</span>
-            <a href="https://www.instagram.com/itsloudhaus" target="_blank" rel="noopener">@itsloudhaus</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="rv">
-        <form id="enquiry">
-          <label class="field"><span>Name</span><input type="text" name="name" required autocomplete="name"></label>
-          <label class="field"><span>Email</span><input type="email" name="email" required autocomplete="email"></label>
-          <label class="field"><span>Project or event</span><input type="text" name="project"></label>
-          <label class="field"><span>Tell us about it</span><textarea name="message" required></textarea></label>
-          <button type="submit">Start the conversation</button>
-          <p class="small" id="formnote" style="margin-top:16px;opacity:0;transition:opacity .3s">Opening your email app with the message ready to send.</p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <button class="lb-x" type="button" aria-label="Close">&times;</button>
-  <button class="lb-prev" type="button" aria-label="Previous image">&#8592;</button>
-  <button class="lb-next" type="button" aria-label="Next image">&#8594;</button>
-  <span class="lb-count" id="lb-count"></span>
-  <div class="lb-stage" id="lb-stage"><img id="lb-img" src="" alt=""></div>
-  <p class="lb-cap" id="lb-cap"></p>
-</div>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-mark">Loud<br>Haus<span class="dot">.</span></div>
-    <div class="footer-meta">
-      <span>Strategic Brand Partnerships</span>
-      <a href="mailto:hello@loudhaus.com">hello@loudhaus.com</a>
-      <a href="https://www.instagram.com/itsloudhaus" target="_blank" rel="noopener">Instagram</a>
-      <span>&copy; <span id="yr"></span> Loud Haus</span>
-    </div>
-  </div>
-</footer>
-
+<div class="show" id="show"></div>
+<div class="scrim"></div>
+<h1 class="logo">Loud<br>Haus.</h1>
+<div class="dots" id="dots" role="group" aria-label="Choose image"></div>
+<nav class="menu">
+  <a href="who.html">Who</a>
+  <a href="work.html">Work</a>
+  <a href="contact.html">Contact</a>
+</nav>
 <script>
-document.documentElement.classList.add('loaded');
-document.body.classList.add('loaded');
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* scroll reveals */
-var io = new IntersectionObserver(function(es){
-  es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
-
-/* header inverts over cream sections */
-var hdr = document.getElementById('hdr');
-var lights = document.querySelectorAll('.light');
-function syncHeader(){
-  var y = hdr.getBoundingClientRect().height * 0.6, on = false;
-  lights.forEach(function(s){
-    var r = s.getBoundingClientRect();
-    if(r.top <= y && r.bottom > y) on = true;
-  });
-  hdr.classList.toggle('on-light', on);
-}
-syncHeader();
-addEventListener('scroll', syncHeader, {passive:true});
-addEventListener('resize', syncHeader);
-
-/* contact form -> mailto (no backend needed on GitHub Pages) */
-document.getElementById('enquiry').addEventListener('submit', function(ev){
-  ev.preventDefault();
-  var f = ev.target;
-  var subject = 'Partnership enquiry — ' + (f.project.value || f.name.value);
-  var body = 'Name: ' + f.name.value + '\nEmail: ' + f.email.value +
-             '\nProject: ' + (f.project.value || '—') + '\n\n' + f.message.value;
-  document.getElementById('formnote').style.opacity = '1';
-  window.location.href = 'mailto:hello@loudhaus.com?subject=' +
-    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-});
-/* lightbox gallery: swipe, arrows, keyboard, per-project scope */
 (function(){
-  var lb=document.getElementById('lb'),
-      img=document.getElementById('lb-img'),
-      cap=document.getElementById('lb-cap'),
-      count=document.getElementById('lb-count'),
-      stage=document.getElementById('lb-stage'),
-      groups=[], cur=null, i=0, last=null;
+  var src=['gq-wall','wc-krept-claw','sb-wall','gq-portrait','wc-guests','gq-arrival',
+           'wc-canwall','wc-krept-stage','gq-detail','wc-clawmachine'];
+  var pos={'gq-wall':'62% 40%','wc-krept-claw':'44% 34%','sb-wall':'52% 40%','gq-portrait':'50% 34%',
+           'wc-guests':'50% 38%','gq-arrival':'50% 30%','wc-canwall':'50% 50%','wc-krept-stage':'50% 40%',
+           'gq-detail':'50% 45%','wc-clawmachine':'50% 46%'};
+  var show=document.getElementById('show'), dots=document.getElementById('dots'),
+      imgs=[], i=0, timer=null,
+      reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // one gallery per project grid
-  Array.prototype.forEach.call(document.querySelectorAll('.shots'), function(grid){
-    var label=(grid.parentNode.querySelector('.shots-label')||{}).textContent||'';
-    var items=Array.prototype.map.call(grid.querySelectorAll('button'), function(b){
-      return {src:b.dataset.full, cap:b.dataset.cap, btn:b};
-    });
-    var g={label:label.trim(), items:items};
-    groups.push(g);
-    items.forEach(function(it,n){
-      it.btn.addEventListener('click', function(){ open(g,n); });
-    });
+  src.forEach(function(name,n){
+    var im=new Image();
+    im.src='img/'+name+'.webp'; im.alt=''; im.decoding='async';
+    im.style.objectPosition=pos[name]||'50% 40%';
+    if(n>1) im.loading='lazy';
+    show.appendChild(im); imgs.push(im);
+    var d=document.createElement('button');
+    d.type='button'; d.setAttribute('aria-label','Image '+(n+1)+' of '+src.length);
+    d.addEventListener('click',function(){ go(n,true); });
+    dots.appendChild(d);
   });
 
-  function preload(n){
-    if(!cur) return;
-    [n-1,n+1].forEach(function(k){
-      var it=cur.items[(k+cur.items.length)%cur.items.length];
-      if(it){ var p=new Image(); p.src=it.src; }
-    });
+  function go(n,manual){
+    imgs[i].classList.remove('on'); dots.children[i].removeAttribute('aria-current');
+    i=(n+imgs.length)%imgs.length;
+    imgs[i].classList.add('on'); dots.children[i].setAttribute('aria-current','true');
+    if(manual) run();
   }
+  function run(){ clearInterval(timer); if(!reduced) timer=setInterval(function(){ go(i+1); },4200); }
 
-  function show(n){
-    if(!cur) return;
-    i=(n+cur.items.length)%cur.items.length;
-    var it=cur.items[i];
-    lb.classList.add('swapping');
-    var pre=new Image();
-    pre.onload=pre.onerror=function(){
-      img.src=it.src; img.alt=it.cap;
-      cap.textContent=cur.label ? cur.label+' \u2014 '+it.cap : it.cap;
-      count.textContent=(i+1)+' / '+cur.items.length;
-      lb.classList.remove('swapping');
-      preload(i);
-    };
-    pre.src=it.src;
-  }
-
-  function open(g,n){
-    last=document.activeElement; cur=g;
-    lb.classList.add('open'); document.body.style.overflow='hidden';
-    show(n); lb.querySelector('.lb-x').focus();
-  }
-  function close(){
-    lb.classList.remove('open'); document.body.style.overflow='';
-    img.src=''; cur=null; if(last) last.focus();
-  }
-
-  lb.querySelector('.lb-x').addEventListener('click',close);
-  lb.querySelector('.lb-prev').addEventListener('click',function(e){ e.stopPropagation(); show(i-1); });
-  lb.querySelector('.lb-next').addEventListener('click',function(e){ e.stopPropagation(); show(i+1); });
-  lb.addEventListener('click',function(e){ if(e.target===lb||e.target===stage) close(); });
-
+  go(0); run();
+  document.addEventListener('visibilitychange',function(){ document.hidden?clearInterval(timer):run(); });
   document.addEventListener('keydown',function(e){
-    if(!lb.classList.contains('open')) return;
-    if(e.key==='Escape') close();
-    else if(e.key==='ArrowLeft') show(i-1);
-    else if(e.key==='ArrowRight') show(i+1);
+    if(e.key==='ArrowRight') go(i+1,true); if(e.key==='ArrowLeft') go(i-1,true);
   });
-
-  /* swipe */
-  var x0=null,y0=null,t0=0,moved=false;
-  stage.addEventListener('touchstart',function(e){
-    if(e.touches.length!==1) return;
-    x0=e.touches[0].clientX; y0=e.touches[0].clientY; t0=Date.now(); moved=false;
+  var x0=null;
+  document.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>44) go(dx<0?i+1:i-1,true);
   },{passive:true});
-  stage.addEventListener('touchmove',function(e){
-    if(x0===null) return;
-    var dx=e.touches[0].clientX-x0, dy=e.touches[0].clientY-y0;
-    if(Math.abs(dx)>Math.abs(dy)) moved=true;
-  },{passive:true});
-  stage.addEventListener('touchend',function(e){
-    if(x0===null) return;
-    var t=e.changedTouches[0], dx=t.clientX-x0, dy=t.clientY-y0, dt=Date.now()-t0;
-    x0=null; y0=null;
-    if(Math.abs(dx)>44 && Math.abs(dx)>Math.abs(dy)*1.2 && dt<800){
-      show(dx<0 ? i+1 : i-1);
-    } else if(!moved && Math.abs(dx)<10 && Math.abs(dy)<10 && dt<300){
-      close();
-    }
-  },{passive:true});
-
-  /* trackpad / mouse drag */
-  var mx=null;
-  stage.addEventListener('mousedown',function(e){ mx=e.clientX; });
-  stage.addEventListener('mouseup',function(e){
-    if(mx===null) return;
-    var dx=e.clientX-mx; mx=null;
-    if(Math.abs(dx)>60) show(dx<0 ? i+1 : i-1);
-  });
 })();
 </script>
 </body>
