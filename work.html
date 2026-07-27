@@ -18,26 +18,18 @@
 <main class="page"><div class="wrap">
 <h1 class="big" style="margin-top:clamp(28px,5vw,60px)">Work</h1>
 
-<div class="gallery">
-  <div class="viewer">
-    <button class="arrow" type="button" id="prev" aria-label="Previous image">&#8592;</button>
-    <div class="frame" id="frame"><img id="gimg" alt=""></div>
-    <button class="arrow" type="button" id="next" aria-label="Next image">&#8594;</button>
-  </div>
-  <div class="arrows-m">
-    <button class="arrow" type="button" id="prevM" aria-label="Previous image">&#8592;</button>
-    <button class="arrow" type="button" id="nextM" aria-label="Next image">&#8594;</button>
-  </div>
-  <div class="gal-meta">
-    <h2 id="gtitle" aria-live="polite"></h2>
-    <span class="num" id="gnum"></span>
+<div class="sv">
+  <div class="sv-list" id="list"></div>
+  <div>
+    <div class="sv-stage" id="stage"><img id="img" alt=""></div>
+    <div class="sv-bar">
+      <button type="button" id="prev" aria-label="Previous image">&#8592;</button>
+      <button type="button" id="next" aria-label="Next image">&#8594;</button>
+      <span class="who" id="who" aria-live="polite"></span>
+      <span class="num" id="num"></span>
+    </div>
   </div>
 </div>
-
-<ul class="textlist">
-  <li>British Museum Couture Fashion Event</li>
-  <li>Black British Comedy Awards</li>
-</ul>
 
 <footer>
   <span>Loud Haus &mdash; Brand Partnerships</span>
@@ -49,46 +41,79 @@
 <script src="menu.js"></script>
 <script>
 (function(){
-  var shots=[["gq-wall", "GQ Men of the Year"], ["gq-wall-2", "GQ Men of the Year"], ["gq-arrival", "GQ Men of the Year"], ["gq-portrait", "GQ Men of the Year"], ["gq-detail", "GQ Men of the Year"], ["wc-krept-claw", "Krept x White Claw"], ["wc-krept-stage", "Krept x White Claw"], ["wc-guests", "Krept x White Claw"], ["wc-clawmachine", "Krept x White Claw"], ["wc-canwall", "Krept x White Claw"], ["wc-neon", "Krept x White Claw"], ["wc-cans", "Krept x White Claw"], ["sb-wall", "Dami Hope x Snowbunny"], ["sb-floor", "Dami Hope x Snowbunny"], ["sb-bumbu", "Dami Hope x Snowbunny"], ["sb-render", "Dami Hope x Snowbunny"]];
-  var frame=document.getElementById('frame'), img=document.getElementById('gimg'),
-      title=document.getElementById('gtitle'), num=document.getElementById('gnum'), i=0;
+  var PROJECTS=[["GQ Men of the Year", ["gq-wall", "gq-wall-2", "gq-arrival", "gq-portrait", "gq-detail"]], ["Krept x White Claw", ["wc-krept-claw", "wc-krept-stage", "wc-guests", "wc-clawmachine", "wc-canwall", "wc-neon", "wc-cans"]], ["Dami Hope x Snowbunny", ["sb-wall", "sb-floor", "sb-bumbu", "sb-render"]], ["British Museum Couture Fashion Event", []], ["Black British Comedy Awards", []]];
+  var list=document.getElementById('list'), stage=document.getElementById('stage'),
+      img=document.getElementById('img'), who=document.getElementById('who'),
+      num=document.getElementById('num'),
+      prev=document.getElementById('prev'), next=document.getElementById('next'),
+      p=0, i=0, note=null;
 
-  function preload(n){
-    var s=shots[(n+shots.length)%shots.length];
-    var p=new Image(); p.src='img/'+s[0]+'.webp';
+  PROJECTS.forEach(function(pr,n){
+    var b=document.createElement('button'); b.type='button';
+    var count=pr[1].length ? pr[1].length+' image'+(pr[1].length>1?'s':'') : 'Sponsorship &amp; partnerships';
+    b.innerHTML=pr[0]+'<span>'+count+'</span>';
+    b.addEventListener('click',function(){ pick(n); });
+    list.appendChild(b);
+  });
+
+  function preload(k){
+    var s=PROJECTS[p][1]; if(!s.length) return;
+    var q=new Image(); q.src='img/'+s[(k+s.length)%s.length]+'.webp';
   }
-  function show(n){
-    i=(n+shots.length)%shots.length;
-    var s=shots[i];
-    frame.classList.add('swap');
+
+  function render(){
+    var pr=PROJECTS[p], shots=pr[1];
+    if(note){ note.remove(); note=null; }
+    if(!shots.length){
+      img.style.display='none';
+      note=document.createElement('p'); note.className='sv-note'; note.textContent=pr[0];
+      stage.appendChild(note);
+      who.textContent=pr[0]; num.textContent='';
+      prev.disabled=true; next.disabled=true;
+      return;
+    }
+    prev.disabled=false; next.disabled=false;
+    img.style.display='';
+    stage.classList.add('swap');
+    var src='img/'+shots[i]+'.webp';
     var pre=new Image();
     pre.onload=pre.onerror=function(){
-      img.src='img/'+s[0]+'.webp'; img.alt=s[1];
-      title.textContent=s[1]; num.textContent=(i+1)+' / '+shots.length;
-      frame.classList.remove('swap');
+      img.src=src; img.alt=pr[0];
+      who.textContent=pr[0]; num.textContent=(i+1)+' / '+shots.length;
+      stage.classList.remove('swap');
       preload(i+1); preload(i-1);
     };
-    pre.src='img/'+s[0]+'.webp';
+    pre.src=src;
   }
-  ['prev','prevM'].forEach(function(id){
-    document.getElementById(id).addEventListener('click',function(){ show(i-1); });
-  });
-  ['next','nextM'].forEach(function(id){
-    document.getElementById(id).addEventListener('click',function(){ show(i+1); });
-  });
+
+  function pick(n){
+    Array.prototype.forEach.call(list.children,function(c){ c.removeAttribute('aria-current'); });
+    list.children[n].setAttribute('aria-current','true');
+    p=n; i=0; render();
+  }
+  function step(d){
+    var shots=PROJECTS[p][1]; if(!shots.length) return;
+    i=(i+d+shots.length)%shots.length; render();
+  }
+  prev.addEventListener('click',function(){ step(-1); });
+  next.addEventListener('click',function(){ step(1); });
+
   document.addEventListener('keydown',function(e){
-    if(document.getElementById('overlay') && !document.getElementById('overlay').hidden) return;
-    if(e.key==='ArrowLeft') show(i-1);
-    if(e.key==='ArrowRight') show(i+1);
+    var ov=document.getElementById('overlay');
+    if(ov && !ov.hidden) return;
+    if(e.key==='ArrowLeft') step(-1);
+    if(e.key==='ArrowRight') step(1);
   });
+
   var x0=null,y0=null;
-  frame.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
-  frame.addEventListener('touchend',function(e){
+  stage.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
+  stage.addEventListener('touchend',function(e){
     if(x0===null) return;
     var t=e.changedTouches[0], dx=t.clientX-x0, dy=t.clientY-y0; x0=null;
-    if(Math.abs(dx)>44 && Math.abs(dx)>Math.abs(dy)) show(dx<0?i+1:i-1);
+    if(Math.abs(dx)>44 && Math.abs(dx)>Math.abs(dy)) step(dx<0?1:-1);
   },{passive:true});
-  show(0);
+
+  pick(0);
 })();
 </script>
 </body>
