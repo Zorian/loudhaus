@@ -5,11 +5,12 @@ Site for **Loud Haus** — a brand partnerships consultancy for fashion, culture
 Static, no build step, no dependencies.
 
 ## Pages
-- `index.html` — full-screen slideshow, no scroll
+- `index.html` — logo screen, no scroll
 - `who.html` — positioning and services
-- `work.html` — project grid with lightbox
+- `work.html` — one-at-a-time image gallery
 - `contact.html` — details
-- `site.css` — shared styles for the three inner pages
+- `site.css` — shared styles
+- `menu.js` — hamburger + full-screen menu, included on every page
 
 ## Images
 `img/` holds the photography, two sizes each:
@@ -18,9 +19,13 @@ Static, no build step, no dependencies.
 
 Prefixes: `wc-` White Claw, `sb-` Snowbunny, `gq-` GQ Men of the Year.
 
-To add a project image: export both sizes, then add a `<article class="tile tall">`
-(or `short`) block in `work.html`. To add it to the homepage, append the filename
-to the `src` array in `index.html`.
+To add a project image: export both sizes, then add `['file-name','Project Title']`
+to the `shots` array in `work.html`.
+
+Gallery images are capped at 640x560 CSS px on purpose. The source photos came from
+WhatsApp and are already compressed, so displaying them larger would show artefacts.
+Every image currently renders at under half its pixel width, which keeps it sharp on
+retina screens. Raise the cap in `.frame` only if higher-resolution originals arrive.
 
 ## Local preview
 ```
