@@ -38,3 +38,8 @@ hello@loudhaus.com · [@itsloudhaus](https://www.instagram.com/itsloudhaus)
 
 Prefixes: `wc-` White Claw, `sb-` Snowbunny, `gq-` GQ Men of the Year.
 To add a shot, export both sizes and copy an existing `<figure>` block in the relevant case study.
+
+## Homepage preview
+`preview/index.html` is an alternative Stranger-style homepage (full-screen, no scroll, auto-advancing
+slideshow) for the client to compare against the main one-page site. It is marked `noindex` and shares
+the same `img/` assets. Delete the folder if the direction isn't taken.
